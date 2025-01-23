@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Video Background Portfolio Website</title>
+    <title>Portfolio Website</title>
 </head>
 <body>
     <video autoplay loop muted playsinline class="background-video">
@@ -13,27 +13,240 @@
     </video>
     <header>
         <a href="#"><img src="assets/SK.png" alt="logo" class="logo"></a>
-
         <input type="checkbox" id="check">
         <label for="check" class="icons">
             <i class='bx bx-menu' id="menu-icon"></i>
             <i class='bx bx-x' id="close-icon"></i>
         </label>
         <nav class="navbar">
-            <a href="#" class="nav-item" style="--i: 0">Home</a>
-            <a href="about.html" class="nav-item" style="--i: 1">About Me</a>
-            <a href="resume.html" class="nav-item" style="--i: 2">Resume</a>
-            <a href="projects.html" class="nav-item" style="--i: 3">Projects</a>
-            <a href="contact.html" class="nav-item" style="--i: 4">Contact</a>
+            <a href="#home" class="nav-item" style="--i: 0">Home</a>
+            <a href="#about" class="nav-item" style="--i: 1">About Me</a>
+            <a href="#projects" class="nav-item" style="--i: 3">Projects</a>
+            <a href="#contact" class="nav-item" style="--i: 4">Contact</a>
+            <a href="assets/Sanjeev_Kamath_Resume.pdf" target="_blank" class="nav-item resume" style="--i: 2">Resume</a>
 
         </nav>
     </header>
 
-    <section class="content">
+    <section id="home" class="home-content">
         <h1>Sanjeev Kamath</h1>
-        <a href="about.html " class="btn light"></a>
+        <a href="#about" class="btn light"></a>
+        <div class="down-arrow">
+            <i class='bx bx-chevron-down'></i>
+        </div>
     </section>
 
+    <section id="about" class="about-content">
+        <div class="about">
+            <h1>Hey, I'm Sanjeev!</h1>
+            <h3>
+                I’m a 3rd-year Computer Science student at the University of Florida, minoring in Business Administration. With internships at ABB and Unilever, I’ve gained hands-on experience in software development and solving real-world challenges.
+
+            </h3>
+            <h3>
+                Driven by curiosity and a passion for learning, I’m eager to explore opportunities where I can grow, contribute, and make a meaningful impact through technology.
+
+            </h3>
+        </div>
+
     
+        <div class="about-img">
+            <img src="assets/headshot.jpg" alt="My Headshot">
+        </div>
+    </section>
+    
+    
+    <section id="projects" class="content">
+        <h1>Projects</h1>
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <div class="project-info">
+          <h2 class="project-title">Solace Mental Wellness App</h2>
+          <p class="project-description">
+            A brief description of your first awesome project.
+            Highlight its features, purpose, or tech stack here.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <div class="project-info">
+          <h2 class="project-title">Wearable Devices Data Analysis</h2>
+          <p class="project-description">
+            A brief description of your second project.
+            Include interesting aspects of the build or solution.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">Medical Crossword Search</h2>
+          <p class="project-description">
+            Quick overview of your third project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">NBA Data Analysis Project</h2>
+          <p class="project-description">
+            A short description of your fourth project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">Command Line Blackjack Game</h2>
+          <p class="project-description">
+            A short description of your fifth project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 6 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">Minesweeper</h2>
+          <p class="project-description">
+            A short description of your sixth project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 7 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">Sudoku Game</h2>
+          <p class="project-description">
+            A short description of your seventh project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 8 -->
+      <div class="project-card">
+
+        <div class="project-info">
+          <h2 class="project-title">Algorithm Analysis Project</h2>
+          <p class="project-description">
+            A short description of your seventh project.
+          </p>
+          <div class="project-links">
+            <a href="#" class="project-btn" target="_blank">View Live</a>
+            <a href="#" class="project-btn" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <section id="contact" class="content">
+        <h1>Contact Me</h1>
+        <div class="contact-container">
+          <!-- Contact Information (GitHub / LinkedIn) -->
+          <div class="contact-info">
+            <h2>Get in touch!</h2>
+            <p>
+              Whether you have a question or just want to say hi,
+              my inbox is always open.
+            </p>
+            <div class="contact-links">
+              <a
+                href="https://github.com/sanjeevkamath"
+                target="_blank"
+                class="contact-link"
+                ><i class='bx bxl-github'></i> GitHub</a
+              >
+              <a
+                href="https://www.linkedin.com/in/sanjeev-kamath/"
+                target="_blank"
+                class="contact-link"
+                ><i class='bx bxl-linkedin'></i> LinkedIn</a
+              >
+              <a href="assets/Sanjeev_Kamath_Resume.pdf" target="_blank" class="contact-link">
+                <i class='bx bx-file'></i> Resume
+              </a>
+            </div>
+          </div>
+    
+          <!-- Contact Form -->
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input 
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+          </form>
+        </div>
+    </section>
+
 </body>
 </html>

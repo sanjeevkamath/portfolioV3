@@ -15,7 +15,13 @@ body {
     min-height: 100vh;
 }
 
-
+#home.home-content,
+#about.about-content,
+#resume.content,
+#projects.content,
+#contact.content {
+    min-height: 100vh;
+}
 
 header {
     position: fixed;
@@ -64,6 +70,22 @@ header {
     width: 100%
 }
 
+.nav-item.active {
+    color: rgba(168,239,255,0.9);
+}
+
+.nav-item.resume {
+    border: 2px solid rgba(168, 239, 255, 1); /* Border color */
+    padding: 0.5rem 1rem; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.nav-item.resume:hover {
+    background: rgba(168, 239, 255, 0.2); /* Background color on hover */
+    color: rgba(168, 239, 255, 1); /* Text color on hover */
+}
+
 .icons {
     position: absolute;
     right: 5%;
@@ -77,20 +99,75 @@ header {
     display: none;
 }
 
-.content {
+/* <<<<<-----------HOME CONTENT----------->>>>>> */
+
+.home-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* Added */
+    flex: 1;
+
 }
 
-.content h1 {
+.home-content h1 {
     font-size: clamp(3rem, 10vw, 8rem);
     font-weight: 600;
     -webkit-text-stroke: 2px rgba(168,239,255,0.9);
     color: transparent;
     transition: all 0.5s ease;
+}
+
+/* <<<<<-----------ABOUT CONTENT----------->>>>>> */
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 10%; /* Adjust padding for consistency */
+    gap: 20px; /* Adds spacing between text and image */
+}
+
+.about {
+    max-width: 600px;
+    flex: 1 1 50%; /* Flex-grow, flex-shrink, and base width */
+    text-align: left;
+}
+
+.about h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(168, 239, 255, 1);
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ededed;
+    margin-bottom: 1rem; /* Add margin between paragraphs */
+}
+
+/* Image Styling */
+.about-img {
+    flex: 1 1 30%; /* Image takes up 40% of the available space */
+    text-align: center; /* Centers the image in its container */
+}
+
+.about-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .btn {
@@ -131,9 +208,8 @@ header {
     }
 }
 
-
 .light:after {
-    content: "About Me";
+    content: "Scroll Down";
     position: absolute;
     display: flex;
     justify-content: center;
@@ -146,7 +222,24 @@ header {
     color: #fff;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     border-radius: 5px;
+}
 
+.down-arrow {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: white;
+    animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 0.7;
+    }
 }
 
 .background-video {
@@ -171,13 +264,11 @@ header {
 
 /* MEDUA QUERIES */
 
-
 @media (max-width: 900px) {
     header {
         padding: 1.3rem 5%;
     }
 }
-
 
 @media (max-width: 700px) {
     header::before {
@@ -264,3 +355,274 @@ header {
         width: 120px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stacks text and image vertically */
+        text-align: center;
+    }
+
+    .about {
+        text-align: center;
+    }
+
+    .about-img {
+        margin-top: 20px;
+    }
+}
+
+
+/************************************************
+  PROJECTS SECTION
+ ************************************************/
+ #projects.content {
+    padding: 80px 10% 40px;
+    /* Keeps visual consistency with your other sections */
+    position: relative;
+    z-index: 1; /* So content stays in front of the gradient background */
+  }
+  
+  #projects h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  
+  /* Projects Grid Container */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Individual Project Card */
+  .project-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* On hover, a slight lift/shadow effect */
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Project Image */
+  .project-image {
+    width: auto;
+    max-width: 100%;
+    height: 300px; /* Limit image height */
+    object-fit: cover; /* Maintain aspect ratio */
+    display: block;
+  }
+  
+  /* Text & Links Container */
+  .project-info {
+    padding: 1rem;
+    flex: 1; /* allows text area to grow */
+  }
+  
+  /* Project Title */
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: rgba(168, 239, 255, 1); /* accent color */
+  }
+  
+  /* Project Description */
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ededed;
+    margin-bottom: 1rem;
+  }
+  
+  /* Links container: View Live / GitHub */
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Button styles for project links */
+  .project-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid rgba(168, 239, 255, 1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .project-btn:hover {
+    background-color: rgba(168, 239, 255, 0.2);
+    color: rgba(168, 239, 255, 1);
+  }
+  
+  /* Responsive tweaks (optional) */
+  @media screen and (max-width: 600px) {
+    #projects h1 {
+      font-size: 2.4rem;
+    }
+    .project-title {
+      font-size: 1.3rem;
+    }
+  }
+
+
+  /************************************************
+  CONTACT SECTION
+ ************************************************/
+#contact.content {
+    padding: 80px 10% 40px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #contact h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  
+  /* Contact Container */
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap; /* stacks on smaller screens */
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  /* Contact Info (GitHub / LinkedIn) */
+  .contact-info {
+    flex: 1 1 300px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #fff;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: rgba(168, 239, 255, 1);
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ededed;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Links container */
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual links (GitHub, LinkedIn) */
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid rgba(168, 239, 255, 1);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    background-color: rgba(168, 239, 255, 0.2);
+    color: rgba(168, 239, 255, 1);
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    flex: 1 1 400px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Form Group Labels/Fields */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.6rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+  }
+  
+  /* Contact Form Button */
+  .contact-btn {
+    align-self: flex-start;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(168, 239, 255, 1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: rgba(168, 239, 255, 0.2);
+    color: rgba(168, 239, 255, 1);
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media screen and (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .contact-info,
+    .contact-form {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  /* Footer */
