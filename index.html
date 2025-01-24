@@ -29,7 +29,6 @@
 
     <section id="home" class="home-content">
         <h1>Sanjeev Kamath</h1>
-        <a href="#about" class="btn light"></a>
         <div class="down-arrow">
             <i class='bx bx-chevron-down'></i>
         </div>
@@ -45,13 +44,13 @@
         <div class="about">
             <h1>Hey, I'm Sanjeev!</h1>
             <h3>
-                I’m a 3rd-year Computer Science student at the University of Florida, 
+                I'm a 3rd-year Computer Science student at the University of Florida, 
                 minoring in Business Administration. With internships at ABB and Unilever, 
-                I’ve gained hands-on experience in software development and solving 
+                I've gained hands-on experience in software development and solving 
                 real-world challenges.
             </h3>
             <h3>
-                Driven by curiosity and a passion for learning, I’m 
+                Driven by curiosity and a passion for learning, I'm 
                 eager to explore opportunities where I can grow, contribute, 
                 and make a meaningful impact through technology.
             </h3>
@@ -116,7 +115,7 @@
           <div class="project-tools">
             <p class="lang">Languages and Tools</p>
             <p>Python</p>
-            <p>Pycharm</p>
+            <p>Pygame</p>
           </div>
         </div>
       </div>
@@ -195,28 +194,29 @@
     
     </div>
 
-    <h3>The source code for all projects are present in my Github linked below</h3>
-
 
     </section>
 
     <section id="contact" class="content">
-    <h1>Contact Me</h1>
+        <h1>Contact Me!</h1>
     <div class="contact-container">
-        <!-- Email Me Button -->
         <div class="contact-info email-me">
             <h2>I'd love to hear from you!</h2>
             <p>
-                Whether you have a question or just want to say hi,
-                my inbox is always open.
+                Whether you have a question or just want to say hi, my inbox is always open.
             </p>
-            <button class="contact-btn" onclick="openEmailEditor()">Email Me</button>
+            <p>Click below to get in touch!</p>
+            <button class="contact-btn" onclick="openEmailEditor()" aria-label="Open email editor">
+                Email Me
+            </button>
+            
         </div>
-        <!-- Contact Information (GitHub / LinkedIn) -->
         <div class="contact-info">
             <h2>Connect with me on social media</h2>
             <p>
-                You can also find me on GitHub, LinkedIn, and view my resume.
+                You can explore the source code of my projects on GitHub, 
+                learn more about my professional experience on LinkedIn, 
+                and access my resume through the following links.
             </p>
             <div class="contact-links">
                 <a
@@ -244,7 +244,6 @@
         window.location.href = "mailto:sanjeev.k.kamath@gmail.com";
     }
 
-    // JavaScript to highlight the active section in the navbar
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-item');
 
