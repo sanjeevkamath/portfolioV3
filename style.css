@@ -6,9 +6,13 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(rgba(3, 12, 35, 1), rgba(94, 134, 214, 0.5));
+    background: linear-gradient(rgb(6, 2, 66), rgba(69, 105, 178, 0.5));
 
     /*background: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.5));*/
     background-repeat: no-repeat;
@@ -72,10 +76,11 @@ header {
 
 .nav-item.active {
     color: rgba(168,239,255,0.9);
+    border-bottom: 2px solid rgba(168,239,255,0.9);
 }
 
 .nav-item.resume {
-    border: 2px solid rgba(168, 239, 255, 1); /* Border color */
+    border: 2px solid rgba(168, 239, 255, 1); 
     padding: 0.5rem 1rem; /* Padding inside the box */
     border-radius: 5px; /* Rounded corners */
     transition: all 0.3s ease; /* Smooth transition */
@@ -123,16 +128,16 @@ header {
 /* <<<<<-----------ABOUT CONTENT----------->>>>>> */
 .about-content {
     display: flex;
-    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 10%; /* Adjust padding for consistency */
-    gap: 20px; /* Adds spacing between text and image */
+    padding: 50px 10%;
+    gap: 20px;
 }
 
 .about {
     max-width: 600px;
-    flex: 1 1 50%; /* Flex-grow, flex-shrink, and base width */
+    flex: 1 1 50%;
     text-align: left;
 }
 
@@ -154,13 +159,12 @@ header {
     font-size: 16px;
     line-height: 1.6;
     color: #ededed;
-    margin-bottom: 1rem; /* Add margin between paragraphs */
+    margin-bottom: 1rem;
 }
 
-/* Image Styling */
 .about-img {
-    flex: 1 1 30%; /* Image takes up 40% of the available space */
-    text-align: center; /* Centers the image in its container */
+    flex: 1 1 30%; 
+    text-align: center;
 }
 
 .about-img img {
@@ -262,7 +266,7 @@ header {
     }
 }
 
-/* MEDUA QUERIES */
+/* MEDIA QUERIES */
 
 @media (max-width: 900px) {
     header {
@@ -377,7 +381,6 @@ header {
  ************************************************/
  #projects.content {
     padding: 80px 10% 40px;
-    /* Keeps visual consistency with your other sections */
     position: relative;
     z-index: 1; /* So content stays in front of the gradient background */
   }
@@ -388,6 +391,16 @@ header {
     color: #fff;
     margin-bottom: 2rem;
   }
+
+  #projects h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(168, 239, 255, 1);
+    margin-bottom: 30px;
+    text-align: center;
+
+
+  }
   
   /* Projects Grid Container */
   .projects-grid {
@@ -396,7 +409,6 @@ header {
     gap: 2rem;
   }
   
-  /* Individual Project Card */
   .project-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -409,18 +421,18 @@ header {
     flex-direction: column;
   }
   
-  /* On hover, a slight lift/shadow effect */
   .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
-  /* Project Image */
   .project-image {
-    width: auto;
-    max-width: 100%;
-    height: 300px; /* Limit image height */
+    margin-top: 20px; /* Increase top margin */
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Maintain aspect ratio */
+    margin: 20px auto 1rem; /* Center the image and add bottom margin */
     display: block;
   }
   
@@ -428,6 +440,9 @@ header {
   .project-info {
     padding: 1rem;
     flex: 1; /* allows text area to grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure bottom alignment */
   }
   
   /* Project Title */
@@ -435,6 +450,7 @@ header {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
     color: rgba(168, 239, 255, 1); /* accent color */
+    text-align: center;
   }
   
   /* Project Description */
@@ -443,32 +459,22 @@ header {
     line-height: 1.6;
     color: #ededed;
     margin-bottom: 1rem;
+    text-align: center;
   }
-  
-  /* Links container: View Live / GitHub */
-  .project-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  /* Button styles for project links */
-  .project-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
+
+  .project-tools {
+    margin-bottom: 1rem;
     font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-    background-color: transparent;
-    border: 2px solid rgba(168, 239, 255, 1);
-    border-radius: 4px;
-    transition: all 0.3s ease;
+    color: #ededed;
+    text-align: center;
+    
+  }
+
+  .project-tools p.lang {
+    font-weight: bold;
+    font-size: 1rem;
   }
   
-  .project-btn:hover {
-    background-color: rgba(168, 239, 255, 0.2);
-    color: rgba(168, 239, 255, 1);
-  }
   
   /* Responsive tweaks (optional) */
   @media screen and (max-width: 600px) {
@@ -503,18 +509,22 @@ header {
     flex-wrap: wrap; /* stacks on smaller screens */
     gap: 2rem;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Center the boxes vertically */
+    flex-direction: column-reverse; /* Ensure email-me comes above contact-info */
   }
   
   /* Contact Info (GitHub / LinkedIn) */
   .contact-info {
     flex: 1 1 300px;
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 8px;
     padding: 1.5rem;
+    align-items: center;
+    justify-content: center;
     color: #fff;
+    /* Apply reusable class */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   .contact-info h2 {
@@ -535,6 +545,7 @@ header {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: space-evenly; /* Evenly space out the buttons */
   }
   
   /* Individual links (GitHub, LinkedIn) */
@@ -561,14 +572,17 @@ header {
   .contact-form {
     flex: 1 1 400px;
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 8px;
     padding: 1.5rem;
     color: #fff;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    /* Apply reusable class */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   /* Form Group Labels/Fields */
@@ -594,7 +608,7 @@ header {
   
   /* Contact Form Button */
   .contact-btn {
-    align-self: flex-start;
+    align-self: center;
     background-color: transparent;
     color: #fff;
     border: 2px solid rgba(168, 239, 255, 1);
@@ -625,4 +639,38 @@ header {
     }
   }
 
+
+.email-me {
+    flex: 1 1 300px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.email-me h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
   /* Footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
