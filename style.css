@@ -569,7 +569,7 @@ header {
     text-shadow: 0 0 10px rgba(8, 56, 66, 0.8), 0 0 20px rgba(125, 219, 240, 0.6), 0 0 30px rgba(168, 239, 255, 0.4);
 }
 
-  /* Footer */
+/* Footer */
 footer {
   margin-top: 2rem;
   padding: 1rem 0;
@@ -584,5 +584,24 @@ footer p {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.loading-screen img {
+    width: 100px;
+    height: auto;
 }
 
